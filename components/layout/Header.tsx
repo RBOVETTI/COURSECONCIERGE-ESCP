@@ -32,11 +32,6 @@ export default function Header({ locale, t }: HeaderProps) {
     return pathname.startsWith(href);
   };
 
-  const toggleLocale = () => {
-    const newLocale = locale === 'en' ? 'it' : 'en';
-    const pathWithoutLocale = pathname.replace(`/${locale}`, '');
-    window.location.href = `/${newLocale}${pathWithoutLocale}`;
-  };
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
@@ -71,19 +66,10 @@ export default function Header({ locale, t }: HeaderProps) {
             ))}
           </div>
 
-          {/* Right side: Search, Language toggle & Mobile menu button */}
+          {/* Right side: Search & Mobile menu button */}
           <div className="flex items-center space-x-4">
             {/* Search Bar */}
             <SearchBar locale={locale} t={t} />
-
-            {/* Language Toggle */}
-            <button
-              onClick={toggleLocale}
-              className="px-3 py-1.5 text-sm font-medium text-text-secondary hover:text-primary border border-gray-300 rounded-lg hover:border-accent transition-colors"
-              aria-label={`Switch to ${locale === 'en' ? 'Italian' : 'English'}`}
-            >
-              {locale === 'en' ? 'IT' : 'EN'}
-            </button>
 
             {/* Mobile menu button */}
             <button
