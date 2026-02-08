@@ -1,30 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const locales = ['en', 'it'] as const;
-const defaultLocale = 'en';
-
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const pathname = request.nextUrl.pathname;
 
-  // Check if pathname already has a locale
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  );
+  // Check if the pathname starts with a supported locale
+  const pathnameStartsWithLocale = pathname.startsWith('/en') || pathname.startsWith('/it');
 
-  // If locale is already present, continue
-  if (pathnameHasLocale) {
+  if (pathnameStartsWithLocale) {
     return NextResponse.next();
   }
 
-  // Redirect to default locale if no locale in pathname
+  // Redirect to /en for paths without locale
   const url = request.nextUrl.clone();
-  url.pathname = `/${defaultLocale}${pathname}`;
+  url.pathname = `/en${pathname === '/' ? '' : pathname}`;
   return NextResponse.redirect(url);
 }
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next, api, images, etc.)
-    '/((?!api|_next|images|pdfs|locales|favicon.ico|manifest.json|robots.txt|sitemap.xml).*)',
+    /*
+     * Match all request paths except:
+     * - _next (Next.js internals)
+     * - Static files (images, fonts, etc.)
+     * - API routes
+     */
+    '/((?!_next|api|favicon.ico|robots.txt|sitemap.xml|manifest.json|.*\\..*).*)'
   ],
 };
