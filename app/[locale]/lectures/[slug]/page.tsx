@@ -22,7 +22,7 @@ interface PageProps {
 
 export async function generateStaticParams() {
   const slugs = getLectureSlugs();
-  const locales: Locale[] = ['en', 'it'];
+  const locales: Locale[] = ['en'];
 
   return locales.flatMap((locale) =>
     slugs.map((slug) => ({
