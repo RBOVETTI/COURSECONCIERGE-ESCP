@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "overview": "Course Overview",
+    "syllabus": "Syllabus",
+    "lectures": "Lectures",
+    "resources": "Resources",
+    "aiAssistant": "AI Assistant",
+    "search": "Search"
+  },
+  "footer": {
+    "course": "AI & Data Transformation in Food & Beverage",
+    "institution": "ESCP Business School",
+    "professor": "Prof. Riccardo Bovetti",
+    "quickLinks": "Quick Links",
+    "copyright": "© 2026 Professor Riccardo Bovetti. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "AI & Data Transformation",
+      "subtitle": "Food & Beverage Industry",
+      "description": "Transform your understanding of AI and data analytics in the F&B sector with cutting-edge insights and practical applications.",
+      "ctaPrimary": "Explore Lectures",
+      "ctaSecondary": "Course Overview"
+    },
+    "quickAccess": {
+      "title": "Quick Access",
+      "currentWeek": "Current Week",
+      "currentWeekDesc": "Jump to this week's lecture",
+      "allLectures": "All Lectures",
+      "allLecturesDesc": "Browse the complete syllabus",
+      "aiAssistant": "AI Assistant",
+      "aiAssistantDesc": "Get instant help with course content"
+    },
+    "highlights": {
+      "title": "Course Highlights",
+      "practical": "Practical Focus",
+      "practicalDesc": "Real-world case studies from leading F&B companies",
+      "innovative": "Innovative Pedagogy",
+      "innovativeDesc": "Gamification, simulations, and hands-on projects",
+      "expert": "Expert Guidance",
+      "expertDesc": "Learn from industry leaders and academic experts"
+    }
+  },
+  "lectures": {
+    "title": "Lectures",
+    "duration": "Duration",
+    "minutes": "minutes",
+    "downloadPdf": "Download PDF",
+    "askAi": "Ask AI About This",
+    "previousLecture": "Previous Lecture",
+    "nextLecture": "Next Lecture",
+    "backToHub": "Back to All Lectures",
+    "tableOfContents": "Table of Contents",
+    "learningObjectives": "Learning Objectives",
+    "keyTakeaways": "Key Takeaways"
+  },
+  "search": {
+    "placeholder": "Search lectures...",
+    "results": "Search Results",
+    "noResults": "No results found",
+    "noResultsDesc": "Try different keywords or browse all lectures",
+    "resultsCount": "{count} results for \"{query}\""
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "close": "Close",
+    "open": "Open",
+    "loading": "Loading..."
+  }
+}

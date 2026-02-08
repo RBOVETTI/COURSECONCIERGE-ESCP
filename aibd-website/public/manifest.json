@@ -1,0 +1,16 @@
+{
+  "name": "AI & Data Transformation in Food & Beverage",
+  "short_name": "AI & Data F&B",
+  "description": "ESCP Business School course on AI and data analytics in the F&B sector",
+  "start_url": "/en",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a2e",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

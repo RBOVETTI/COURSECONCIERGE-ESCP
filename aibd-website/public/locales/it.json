@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "overview": "Panoramica del Corso",
+    "syllabus": "Programma",
+    "lectures": "Lezioni",
+    "resources": "Risorse",
+    "aiAssistant": "Assistente AI",
+    "search": "Cerca"
+  },
+  "footer": {
+    "course": "AI & Trasformazione dei Dati nel Food & Beverage",
+    "institution": "ESCP Business School",
+    "professor": "Prof. Riccardo Bovetti",
+    "quickLinks": "Link Rapidi",
+    "copyright": "© 2026 Professore Riccardo Bovetti. Tutti i diritti riservati."
+  },
+  "home": {
+    "hero": {
+      "title": "AI & Trasformazione dei Dati",
+      "subtitle": "Industria Food & Beverage",
+      "description": "Trasforma la tua comprensione di AI e analisi dei dati nel settore F&B con approfondimenti all'avanguardia e applicazioni pratiche.",
+      "ctaPrimary": "Esplora le Lezioni",
+      "ctaSecondary": "Panoramica del Corso"
+    },
+    "quickAccess": {
+      "title": "Accesso Rapido",
+      "currentWeek": "Settimana Corrente",
+      "currentWeekDesc": "Vai alla lezione di questa settimana",
+      "allLectures": "Tutte le Lezioni",
+      "allLecturesDesc": "Sfoglia il programma completo",
+      "aiAssistant": "Assistente AI",
+      "aiAssistantDesc": "Ottieni aiuto immediato con il contenuto del corso"
+    },
+    "highlights": {
+      "title": "Punti Salienti del Corso",
+      "practical": "Focus Pratico",
+      "practicalDesc": "Casi di studio reali dalle principali aziende F&B",
+      "innovative": "Pedagogia Innovativa",
+      "innovativeDesc": "Gamification, simulazioni e progetti pratici",
+      "expert": "Guida Esperta",
+      "expertDesc": "Impara dai leader del settore e dagli esperti accademici"
+    }
+  },
+  "lectures": {
+    "title": "Lezioni",
+    "duration": "Durata",
+    "minutes": "minuti",
+    "downloadPdf": "Scarica PDF",
+    "askAi": "Chiedi all'AI",
+    "previousLecture": "Lezione Precedente",
+    "nextLecture": "Lezione Successiva",
+    "backToHub": "Tutte le Lezioni",
+    "tableOfContents": "Indice",
+    "learningObjectives": "Obiettivi di Apprendimento",
+    "keyTakeaways": "Concetti Chiave"
+  },
+  "search": {
+    "placeholder": "Cerca nelle lezioni...",
+    "results": "Risultati della Ricerca",
+    "noResults": "Nessun risultato trovato",
+    "noResultsDesc": "Prova parole chiave diverse o sfoglia tutte le lezioni",
+    "resultsCount": "{count} risultati per \"{query}\""
+  },
+  "common": {
+    "readMore": "Leggi di Più",
+    "learnMore": "Scopri di Più",
+    "getStarted": "Inizia",
+    "close": "Chiudi",
+    "open": "Apri",
+    "loading": "Caricamento..."
+  }
+}

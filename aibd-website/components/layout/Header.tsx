@@ -1,0 +1,134 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Locale } from '@/i18n';
+import { Translations } from '@/lib/utils/i18n';
+import SearchBar from '@/components/search/SearchBar';
+
+interface HeaderProps {
+  locale: Locale;
+  t: Translations;
+}
+
+export default function Header({ locale, t }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navigation = [
+    { name: t.nav.home, href: `/${locale}` },
+    { name: t.nav.overview, href: `/${locale}/overview` },
+    { name: t.nav.syllabus, href: `/${locale}/syllabus` },
+    { name: t.nav.lectures, href: `/${locale}/lectures` },
+    { name: t.nav.resources, href: `/${locale}/resources` },
+    { name: t.nav.aiAssistant, href: `/${locale}/ai-assistant` },
+  ];
+
+  const isActive = (href: string) => {
+    if (href === `/${locale}`) {
+      return pathname === href;
+    }
+    return pathname.startsWith(href);
+  };
+
+  const toggleLocale = () => {
+    const newLocale = locale === 'en' ? 'it' : 'en';
+    const pathWithoutLocale = pathname.replace(`/${locale}`, '');
+    window.location.href = `/${newLocale}${pathWithoutLocale}`;
+  };
+
+  return (
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+      <nav className="container-width" aria-label="Main navigation">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href={`/${locale}`} className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-xl">AI</span>
+              </div>
+              <span className="hidden md:block font-semibold text-primary text-lg">
+                AI & Data Transformation
+              </span>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  isActive(item.href)
+                    ? 'bg-accent/10 text-accent'
+                    : 'text-text-secondary hover:bg-background-dark hover:text-primary'
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right side: Search, Language toggle & Mobile menu button */}
+          <div className="flex items-center space-x-4">
+            {/* Search Bar */}
+            <SearchBar locale={locale} t={t} />
+
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLocale}
+              className="px-3 py-1.5 text-sm font-medium text-text-secondary hover:text-primary border border-gray-300 rounded-lg hover:border-accent transition-colors"
+              aria-label={`Switch to ${locale === 'en' ? 'Italian' : 'English'}`}
+            >
+              {locale === 'en' ? 'IT' : 'EN'}
+            </button>
+
+            {/* Mobile menu button */}
+            <button
+              type="button"
+              className="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-text-secondary hover:text-primary hover:bg-background-dark transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-label="Toggle mobile menu"
+            >
+              <span className="sr-only">Open main menu</span>
+              {!mobileMenuOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden py-4 border-t border-gray-200">
+            <div className="space-y-1">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                    isActive(item.href)
+                      ? 'bg-accent/10 text-accent'
+                      : 'text-text-secondary hover:bg-background-dark hover:text-primary'
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+}
