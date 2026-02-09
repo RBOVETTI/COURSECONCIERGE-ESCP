@@ -63,9 +63,9 @@ export default function LecturePage({ params }: PageProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-80 bg-gradient-to-br from-primary via-primary-light to-accent">
+      <section className="relative min-h-[32rem] bg-gradient-to-br from-primary via-primary-light to-accent">
         {frontmatter.image && (
-          <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 opacity-20">
             <Image
               src={frontmatter.image}
               alt={frontmatter.title}
@@ -75,7 +75,7 @@ export default function LecturePage({ params }: PageProps) {
             />
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/50 to-transparent" />
 
         <div className="relative h-full container-width flex flex-col justify-end pb-8">
           <div className="flex items-center gap-2 mb-3">
@@ -120,6 +120,22 @@ export default function LecturePage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Lecture Visual */}
+      {frontmatter.image && (
+        <section className="bg-white border-b border-gray-200">
+          <div className="container-width py-8">
+            <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src={frontmatter.image}
+                alt={`${frontmatter.title} - Visual Overview`}
+                fill
+                className="object-contain bg-gradient-to-br from-gray-50 to-gray-100"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Learning Objectives */}
       {frontmatter.objectives && frontmatter.objectives.length > 0 && (

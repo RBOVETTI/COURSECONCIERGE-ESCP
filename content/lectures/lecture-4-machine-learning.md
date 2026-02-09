@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning Applications in Food & Beverage"
 lectureNumber: 4
-date: "2026-03-02"
+date: "2026-03-09"
 duration: 180
 image: "/images/lectures/lecture4.png"
 pdfFile: "/pdfs/lecture-4.pdf"

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Locale } from '@/i18n';
 
 interface PageProps {
@@ -56,8 +57,7 @@ export default function OverviewPage({ params }: PageProps) {
                   </div>
                   <h4 className="text-h4 font-semibold text-primary mb-2">Industry-Focused</h4>
                   <p className="text-text-secondary">
-                    Every concept is grounded in Food & Beverage applications, ensuring immediate relevance
-                    to industry challenges and opportunities.
+                    Concepts are grounded in Food & Beverage applications, connecting theory to industry practice.
                   </p>
                 </div>
 
@@ -69,8 +69,7 @@ export default function OverviewPage({ params }: PageProps) {
                   </div>
                   <h4 className="text-h4 font-semibold text-primary mb-2">Hands-On Learning</h4>
                   <p className="text-text-secondary">
-                    Practical exercises, simulations, and interactive activities ensure you can immediately apply concepts
-                    to real-world challenges.
+                    Practical exercises, simulations, and interactive activities to apply concepts in context.
                   </p>
                 </div>
 
@@ -82,7 +81,7 @@ export default function OverviewPage({ params }: PageProps) {
                   </div>
                   <h4 className="text-h4 font-semibold text-primary mb-2">Strategic & Technical Balance</h4>
                   <p className="text-text-secondary">
-                    Learn both business strategy (when and why to use AI) and technical implementation (how to deploy it effectively).
+                    Combining business strategy (when and why to use AI) with practical implementation approaches.
                   </p>
                 </div>
 
@@ -94,7 +93,7 @@ export default function OverviewPage({ params }: PageProps) {
                   </div>
                   <h4 className="text-h4 font-semibold text-primary mb-2">Ethics & Governance</h4>
                   <p className="text-text-secondary">
-                    Address algorithmic bias, privacy concerns, and responsible AI deployment within regulatory frameworks.
+                    Exploring algorithmic bias, privacy considerations, and responsible AI deployment.
                   </p>
                 </div>
               </div>
@@ -108,21 +107,34 @@ export default function OverviewPage({ params }: PageProps) {
         <div className="container-width">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-h2 font-bold text-primary mb-6">About Professor Riccardo Bovetti</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-text-primary leading-relaxed mb-4">
-                Professor Riccardo Bovetti is a Partner at EY based in Milan. He has been in the consulting business since 1997,
-                starting in the ICT field before transitioning to managerial consulting. His professional focus lies primarily
-                in Consumer Products & Retail, with additional experience in Diversified Industrial Products.
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div className="md:col-span-1">
+                <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/photo.jpg"
+                    alt="Professor Riccardo Bovetti"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <div className="md:col-span-2">
+                <p className="text-text-primary leading-relaxed mb-4">
+                  Professor Riccardo Bovetti is a Partner at EY based in Milan. He has been in the consulting business since 1997,
+                  starting in the ICT field before transitioning to managerial consulting. His professional focus lies primarily
+                  in Consumer Products & Retail, with additional experience in Diversified Industrial Products.
+                </p>
 
-              <p className="text-text-primary leading-relaxed mb-4">
-                He holds a degree in Information Science and has been a university adjunct professor since 2003, teaching at
-                Universit&agrave; di Torino, CUOA Business School, SAA, Universit&agrave; Cattolica di Milano, ESCP Business School
-                (Turin & Berlin campuses), and ESA Beirut. His unique combination of deep industry consulting and academic
-                experience allows him to bridge the gap between theoretical frameworks and practical business transformation.
-              </p>
+                <p className="text-text-primary leading-relaxed mb-4">
+                  He holds a degree in Information Science and has been a university adjunct professor since 2003, teaching at
+                  <strong> Università di Torino</strong>, <strong>CUOA Business School</strong>, <strong>SAA</strong>, <strong>Università Cattolica di Milano</strong>, <strong>ESCP Business School</strong> (Turin & Berlin campuses), and <strong>ESA Beirut</strong>. His unique combination of deep industry consulting and academic
+                  experience allows him to bridge the gap between theoretical frameworks and practical business transformation.
+                </p>
+              </div>
+            </div>
 
-              <h3 className="text-h3 font-semibold text-primary mt-8 mb-4">Teaching Philosophy</h3>
+            <div className="mt-8">
+              <h3 className="text-h3 font-semibold text-primary mb-4">Teaching Philosophy</h3>
 
               <blockquote className="border-l-4 border-accent pl-6 py-2 italic text-text-secondary mb-6 bg-white p-4 rounded">
                 &ldquo;Technology alone changes nothing. Organizations that succeed with AI don&apos;t just adopt tools—they reimagine

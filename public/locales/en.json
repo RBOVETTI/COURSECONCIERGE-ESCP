@@ -35,11 +35,11 @@
     "highlights": {
       "title": "Course Highlights",
       "practical": "Practical Focus",
-      "practicalDesc": "Real-world case studies from leading F&B companies",
+      "practicalDesc": "Industry examples and applications from the F&B sector",
       "innovative": "Innovative Pedagogy",
-      "innovativeDesc": "Gamification, simulations, and hands-on projects",
+      "innovativeDesc": "Interactive simulations and hands-on projects",
       "expert": "Expert Guidance",
-      "expertDesc": "Learn from industry leaders and academic experts"
+      "expertDesc": "Insights from consulting practice and academic research"
     }
   },
   "lectures": {

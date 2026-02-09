@@ -93,6 +93,58 @@ export default function AIAssistantPage({ params }: PageProps) {
               ))}
             </div>
 
+            {/* AI Manifesto Section */}
+            <div className="mt-12 card p-8 bg-gradient-to-br from-primary/5 to-accent/5 border-l-4 border-accent">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                  <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h2 className="text-h2 font-bold text-primary">AI Manifesto</h2>
+              </div>
+              <p className="text-text-secondary mb-6 text-lg">
+                Principles of Conscious Engagement with AI
+              </p>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">1</div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-1">Inviting AI to the Table</h4>
+                    <p className="text-text-secondary">AI as advisor, not substitute</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">2</div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-1">Human-in-the-Loop</h4>
+                    <p className="text-text-secondary">Humans maintain ultimate agency</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">3</div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-1">Persona-Driven Interaction</h4>
+                    <p className="text-text-secondary">Define AI&apos;s role explicitly</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">4</div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-1">&ldquo;Worst AI&rdquo; Assumption</h4>
+                    <p className="text-text-secondary">Current tools are most primitive; mastery now = future advantage</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center font-bold">5</div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-1">Academic Integrity Rule</h4>
+                    <p className="text-text-secondary">AI prohibited during final individual exam</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Contact Section */}
             <div className="mt-8 card p-6 bg-background-light">
               <h3 className="font-semibold text-primary mb-3">Contact</h3>
@@ -101,13 +153,13 @@ export default function AIAssistantPage({ params }: PageProps) {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="mailto:riccardo.bovetti@gmail.com"
+                  href="mailto:riccardo.bovetti@escp.eu"
                   className="flex items-center text-accent hover:text-accent-dark text-sm font-medium"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  riccardo.bovetti@gmail.com
+                  riccardo.bovetti@escp.eu
                 </a>
                 <a
                   href="https://rbovetti.com"
