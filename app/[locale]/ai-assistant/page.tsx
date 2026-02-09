@@ -153,13 +153,13 @@ export default function AIAssistantPage({ params }: PageProps) {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="mailto:riccardo.bovetti@escp.eu"
+                  href="mailto:riccardo.bovetti@gmail.com"
                   className="flex items-center text-accent hover:text-accent-dark text-sm font-medium"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  riccardo.bovetti@escp.eu
+                  riccardo.bovetti@gmail.com
                 </a>
                 <a
                   href="https://rbovetti.com"

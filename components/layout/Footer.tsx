@@ -57,8 +57,8 @@ export default function Footer({ locale, t }: FooterProps) {
             <p className="text-text-white/80 text-sm mb-2">ESCP Business School</p>
             <p className="text-text-white/80 text-sm mb-2">Turin Campus</p>
             <p className="text-text-white/80 text-sm">
-              <a href="mailto:riccardo.bovetti@escp.eu" className="hover:text-accent transition-colors">
-                riccardo.bovetti@escp.eu
+              <a href="mailto:riccardo.bovetti@gmail.com" className="hover:text-accent transition-colors">
+                riccardo.bovetti@gmail.com
               </a>
             </p>
           </div>

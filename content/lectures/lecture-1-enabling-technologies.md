@@ -195,6 +195,18 @@ Human expertise often operates at a tacit level. An experienced quality inspecto
 
 6. **Human-AI Complementarity, Not Replacement:** The paradoxes of Polanyi and Moravec demonstrate that human and machine capabilities are asymmetric. Optimal systems leverage both.
 
+## Key Questions
+
+1. **Explain the Productivity Paradox observed during the electrification era (1890-1920) and its modern parallels in AI adoption.** What organizational factors prevented immediate productivity gains, and how do these lessons apply to contemporary F&B digital transformation strategies?
+
+2. **Compare and contrast the four enabling technology layers (Cloud, IoT, Robotics, AR) in terms of their strategic impact on F&B value chains.** Provide specific examples of how each layer addresses different competitive challenges in the industry.
+
+3. **Analyze the relationship between Big Data and Synthetic Data in the context of training machine learning models.** What are the advantages and limitations of each approach, and in which F&B scenarios would synthetic data be strategically preferable?
+
+4. **Using the Polanyi Paradox and Moravec Paradox as frameworks, identify which F&B tasks are most susceptible to automation and which remain resistant.** Justify your classification with specific examples from manufacturing, supply chain, or customer service contexts.
+
+5. **Evaluate the statement: "3D printing and mass customization represent a strategic opportunity rather than an operational efficiency gain for F&B companies."** Support your argument with economic analysis (unit economics, market segmentation) and technical feasibility considerations (materials, speed, regulatory constraints).
+
 ## Discussion Prompts
 
 1. Identify three processes in your organization where efficiency improvements (doing things right) are occurring without effectiveness evaluation (doing the right things). What would a fundamental redesign look like?

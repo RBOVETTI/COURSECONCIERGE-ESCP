@@ -343,6 +343,18 @@ Luciano Floridi argues that **we do not merely use information technologies; we 
 
 8. **Ethics and Expertise Are Inseparable**: Technical capability without ethical responsibility is dangerous. We are "makers" of the digital world and bear responsibility for what we create.
 
+## Key Questions
+
+1. **Analyze the organizational transformation required to build a data-driven culture using the Three Pillars framework (Talent-Analytics-Context, Scientific Method, Hybrid Synthesis).** For a traditional F&B manufacturer transitioning to data-driven operations, design a 3-year transformation roadmap that addresses technical capabilities, organizational processes, and cultural mindset shifts. Identify the most critical early wins and the most challenging cultural barriers.
+
+2. **Critically evaluate the role of philosophical frameworks (Ontology, Epistemology, Axiology, Logic) in shaping AI governance policies for an F&B company.** Using a specific example (e.g., algorithmic pricing, supplier selection, hiring decisions), explain how each philosophical dimension informs ethical considerations and governance requirements. How do these abstract principles translate into concrete policy guardrails?
+
+3. **Compare the Turing Test, Chinese Room argument, and Moravec Paradox as lenses for understanding AI capabilities and limitations.** What does each framework reveal about the boundary between human and machine intelligence? How should these philosophical distinctions inform the allocation of decision-making authority between humans and AI systems in F&B operations (e.g., which decisions should remain "human-in-the-loop" vs. fully automated)?
+
+4. **Design a comprehensive AI governance framework for a multinational F&B corporation, addressing: (a) algorithmic bias detection and mitigation, (b) privacy and data protection compliance (GDPR, local regulations), (c) explainability requirements for regulatory and consumer trust, (d) accountability structures for algorithmic decisions, and (e) workforce impact management (reskilling, job displacement).** Justify your framework using principles from digital ethics and responsible AI.
+
+5. **Evaluate Floridi's concept of the Fourth Revolution and the Infosphere in the context of F&B digital transformation.** How does framing information as an existential environment (rather than a tool) change strategic thinking about data, algorithms, and customer relationships? Provide specific examples of how this philosophical shift might alter business model design, competitive strategy, or innovation priorities in the F&B sector.
+
 ## Discussion Prompts
 
 1. Identify a recent business decision in your organization that involved a trade-off between two competing values (e.g., speed vs. accuracy, personalization vs. privacy). How was the trade-off resolved? Was it made explicit, or did it happen implicitly?

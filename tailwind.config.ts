@@ -9,28 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary colors from specification
+        // Primary colors - rbovetti.com family
         primary: {
-          DEFAULT: '#1a1a2e',
-          light: '#2d2d44',
-          dark: '#0f0f1a',
+          DEFAULT: '#1b365d', // accent-cold
+          light: '#2d4a75',
+          dark: '#0f1e3d',
         },
         accent: {
-          DEFAULT: '#00adb5',
-          light: '#00d4dd',
-          dark: '#008892',
+          DEFAULT: '#8b2635', // accent-warm
+          light: '#a33043',
+          dark: '#75202d',
         },
         // Background colors
         background: {
-          DEFAULT: '#ffffff',
-          light: '#f8f9fa',
-          dark: '#e9ecef',
+          DEFAULT: '#fafaf8',
+          light: '#ffffff',
+          dark: '#f0f0ee',
         },
         // Text colors
         text: {
-          primary: '#1a1a2e',
-          secondary: '#495057',
-          light: '#6c757d',
+          primary: '#1a1a1a',
+          secondary: '#4a4a4a',
+          light: '#6a6a6a',
           white: '#ffffff',
         },
         // Semantic colors
@@ -38,9 +38,16 @@ const config: Config = {
         warning: '#ffc107',
         error: '#dc3545',
         info: '#17a2b8',
+        // Border
+        border: {
+          DEFAULT: 'rgba(27, 54, 93, 0.12)',
+          light: 'rgba(27, 54, 93, 0.08)',
+          dark: 'rgba(27, 54, 93, 0.2)',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       fontSize: {
@@ -57,7 +64,7 @@ const config: Config = {
         'section-mobile': '3rem',
       },
       borderRadius: {
-        'card': '0.75rem',
+        'card': '1rem',
       },
       boxShadow: {
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',

@@ -8,6 +8,7 @@ import { getLectureBySlug, getLectureSlugs, getAdjacentLectures } from '@/lib/ut
 import { extractTableOfContents } from '@/lib/utils/toc';
 import TableOfContents from '@/components/lectures/TableOfContents';
 import LectureNavigation from '@/components/lectures/LectureNavigation';
+import LectureImageSection from '@/components/lectures/LectureImageSection';
 import { mdxComponents } from '@/components/lectures/MdxComponents';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeSlug from 'rehype-slug';
@@ -123,18 +124,10 @@ export default function LecturePage({ params }: PageProps) {
 
       {/* Lecture Visual */}
       {frontmatter.image && (
-        <section className="bg-white border-b border-gray-200">
-          <div className="container-width py-8">
-            <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src={frontmatter.image}
-                alt={`${frontmatter.title} - Visual Overview`}
-                fill
-                className="object-contain bg-gradient-to-br from-gray-50 to-gray-100"
-              />
-            </div>
-          </div>
-        </section>
+        <LectureImageSection
+          imageSrc={frontmatter.image}
+          imageAlt={`${frontmatter.title} - Visual Overview`}
+        />
       )}
 
       {/* Learning Objectives */}

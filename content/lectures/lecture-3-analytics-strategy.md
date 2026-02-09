@@ -118,6 +118,18 @@ After completing the simulation, we will debrief as a class using the following 
 
 6. **Learning by Doing:** Simulation-based learning reveals blind spots and builds practical skills that lectures alone cannot develop.
 
+## Key Questions
+
+1. **Analyze the relationship between analytics maturity and organizational readiness using the simulation as evidence.** Why do organizations with strong technical capabilities (data infrastructure, analytical talent) often fail to achieve strategic impact? What organizational factors are necessary complements to technical capability?
+
+2. **Evaluate the strategic prioritization framework used in the simulation.** Propose a structured methodology for ranking analytics initiatives based on business impact, feasibility, and strategic alignment. Apply this framework to a specific F&B context (e.g., demand forecasting vs. customer segmentation vs. supply chain optimization).
+
+3. **Critically assess the trade-off between analytical rigor and decision speed demonstrated in the simulation.** Under what conditions should organizations prioritize "fast and directionally correct" over "slow and precisely optimized"? Provide F&B examples where each approach would be strategically appropriate.
+
+4. **Examine the role of communication and stakeholder alignment in translating analytical insights into business action.** Using simulation scenarios, explain how technically sound analyses can fail due to organizational barriers. What communication strategies would you employ to build data-driven decision-making culture in a traditionally intuition-driven F&B organization?
+
+5. **Synthesize lessons from the simulation with the Knowledge Pyramid and Analytics Spectrum frameworks from Lecture 2.** Explain how moving from descriptive to predictive to prescriptive analytics requires not only technical advancement but also organizational capability development. Identify the specific organizational capabilities required at each analytics maturity level.
+
 ## Discussion Prompts
 
 1. Reflect on your simulation experience: What was the most surprising insight about your own decision-making process? How would you approach the simulation differently with hindsight?

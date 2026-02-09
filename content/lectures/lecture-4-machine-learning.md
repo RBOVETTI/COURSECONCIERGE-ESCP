@@ -291,6 +291,18 @@ Accuracy alone is insufficient for evaluating model performance. Different metri
 
 6. **Deployment ≠ End:** Production ML requires monitoring, maintenance, and continuous improvement.
 
+## Key Questions
+
+1. **Design a complete ML pipeline for demand forecasting in a multinational F&B company.** Specify: (a) data sources and feature engineering strategy, (b) algorithm selection and justification (consider data volume, interpretability needs, and problem complexity), (c) performance metrics aligned with business objectives, (d) deployment architecture, and (e) monitoring strategy for detecting model degradation.
+
+2. **Compare Random Forest and Neural Network approaches for a food quality inspection system.** Analyze each approach across five dimensions: interpretability, data requirements, computational cost, accuracy potential, and deployment complexity. Given regulatory requirements for explainability in food safety, which approach would you recommend and why?
+
+3. **Explain the Bias-Variance Tradeoff using a concrete F&B example (e.g., predicting customer churn, forecasting seasonal demand, or classifying product defects).** How does this tradeoff manifest in model performance? What strategies would you employ to optimize the balance, and how would you validate that your solution generalizes to new data?
+
+4. **Analyze a scenario where a deployed recommendation system for an F&B e-commerce platform exhibits declining performance over time.** Identify three potential causes of model drift, explain the underlying mechanisms, and propose a technical solution for each (including detection methods, retraining strategies, and A/B testing approaches).
+
+5. **Critically evaluate the statement: "Feature engineering is more important than algorithm selection for ML success in F&B applications."** Support your argument with specific examples of high-impact features in different F&B contexts (supply chain, manufacturing, marketing). Discuss when this principle might not hold (i.e., when algorithmic sophistication becomes necessary).
+
 ## Discussion Prompts
 
 1. For a business process you're familiar with, design an ML application: What would you predict? What features would you engineer? How would you measure success?

@@ -109,12 +109,12 @@ export default function OverviewPage({ params }: PageProps) {
             <h2 className="text-h2 font-bold text-primary mb-6">About Professor Riccardo Bovetti</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               <div className="md:col-span-1">
-                <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg">
+                <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden shadow-lg">
                   <Image
                     src="/images/photo.jpg"
                     alt="Professor Riccardo Bovetti"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale"
                   />
                 </div>
               </div>

@@ -85,21 +85,20 @@ Traditional economics suggested a trade-off between richness (quality/depth of i
 
 ### The Knowledge Pyramid
 
-```
-        Decisions (Strategic Action)
-              ↑
-        Knowledge (Insights & Patterns)
-              ↑
-        Information (Structure + Semantics)
-              ↑
-        Data (Raw Observations)
-```
+The transformation from raw data to strategic action follows a hierarchical progression:
 
-**Data → Information:** Adding structure and semantic layers (context, relationships)
+| **Level** | **Description** | **Transformation** |
+|-----------|-----------------|-------------------|
+| **4. Decisions** | Strategic Action | Knowledge → Action |
+| **3. Knowledge** | Insights & Patterns | Information → Understanding |
+| **2. Information** | Structure + Semantics | Data → Context |
+| **1. Data** | Raw Observations | Capture → Storage |
 
-**Information → Knowledge:** Extracting insights and identifying patterns
+**Key Transformations:**
 
-**Knowledge → Decisions:** Converting understanding into actionable strategies
+- **Data → Information:** Adding structure and semantic layers (context, relationships)
+- **Information → Knowledge:** Extracting insights and identifying patterns
+- **Knowledge → Decisions:** Converting understanding into actionable strategies
 
 ### Real-World Example: Crowdsourced Infrastructure
 
@@ -243,6 +242,18 @@ Rolls-Royce shifted from selling jet engines to selling flight hours. Sensors mo
 6. **Bias is Baked In:** Machine learning reflects the data it learns from. Historical inequities perpetuate unless deliberately countered.
 
 7. **Servitization Realigns Incentives:** Selling outcomes instead of products creates shared success metrics and transforms customer relationships from transactional to strategic.
+
+## Key Questions
+
+1. **Analyze the economic transition from "atoms to bits" using the F&B industry as your case study.** Explain how this shift challenges traditional business models in food manufacturing, distribution, and retail. Include specific examples of companies successfully navigating this transition.
+
+2. **Critically evaluate the "Richness vs Reach" paradox in the context of personalized nutrition platforms.** How do digital technologies enable the simultaneous achievement of both high richness (personalized meal plans, nutritional advice) and high reach (millions of users)? What are the remaining constraints?
+
+3. **Using the Knowledge Pyramid framework, trace the transformation of raw sensor data from a smart warehouse into strategic inventory management decisions.** Identify the value-adding processes at each level (Data → Information → Knowledge → Decisions) and the analytical techniques required.
+
+4. **Compare descriptive, predictive, and prescriptive analytics in terms of strategic value and implementation complexity.** For an F&B supply chain scenario (e.g., demand forecasting, route optimization), explain which analytics approach would be most appropriate and why, including ROI considerations.
+
+5. **Examine the ethical dimensions of algorithmic bias in F&B applications.** Provide a concrete example where biased training data could lead to discriminatory outcomes (e.g., credit scoring for suppliers, hiring algorithms, customer segmentation). Propose a governance framework to mitigate these risks, incorporating technical, organizational, and regulatory measures.
 
 ## Discussion Prompts
 
