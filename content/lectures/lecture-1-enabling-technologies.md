@@ -51,7 +51,7 @@ Despite unprecedented investment in technology, many F&B organizations struggle 
 
 ### The Productivity Formula
 
-`\text{Productivity} = \frac{\text{Output (Value Created)}}{\text{Input (Resources Consumed)}}`
+**Productivity = Output (Value Created) / Input (Resources Consumed)**
 
 ### Efficiency vs. Effectiveness
 
