@@ -205,6 +205,5 @@ Human expertise often operates at a tacit level. An experienced quality inspecto
 
 ## Further Reading
 
-- "The Second Machine Age" by Erik Brynjolfsson and Andrew McAfee
-- "The Industries of the Future" by Alec Ross
-- "Platform Revolution" by Geoffrey G. Parker, Marshall W. Van Alstyne, and Sangeet Paul Choudary
+- Floridi, L. (2016). *The Fourth Revolution: How the Infosphere Is Reshaping Human Reality.* Oxford University Press.
+- Mollick, E. (2024). *Co-Intelligence: Living and Working with AI.* Portfolio.

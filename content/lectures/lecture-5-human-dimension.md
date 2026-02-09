@@ -353,7 +353,5 @@ Luciano Floridi argues that **we do not merely use information technologies; we 
 
 ## Further Reading
 
-- "The Fourth Revolution" by Luciano Floridi
-- "The Ethical Algorithm" by Michael Kearns and Aaron Roth
-- "Weapons of Math Destruction" by Cathy O'Neil
-- "Thinking, Fast and Slow" by Daniel Kahneman (on human judgment and biases)
+- Floridi, L. (2016). *The Fourth Revolution: How the Infosphere Is Reshaping Human Reality.* Oxford University Press.
+- Mollick, E. (2024). *Co-Intelligence: Living and Working with AI.* Portfolio.

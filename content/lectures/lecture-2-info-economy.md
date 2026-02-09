@@ -254,6 +254,5 @@ Rolls-Royce shifted from selling jet engines to selling flight hours. Sensors mo
 
 ## Further Reading
 
-- "The Fourth Revolution" by Luciano Floridi
-- "Weapons of Math Destruction" by Cathy O'Neil
-- "Information Rules" by Carl Shapiro and Hal R. Varian
+- Floridi, L. (2016). *The Fourth Revolution: How the Infosphere Is Reshaping Human Reality.* Oxford University Press.
+- Mollick, E. (2024). *Co-Intelligence: Living and Working with AI.* Portfolio.

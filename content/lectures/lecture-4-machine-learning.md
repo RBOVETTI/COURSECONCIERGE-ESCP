@@ -301,6 +301,5 @@ Accuracy alone is insufficient for evaluating model performance. Different metri
 
 ## Further Reading
 
-- "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow" by Aurélien Géron
-- "The Hundred-Page Machine Learning Book" by Andriy Burkov
-- "Feature Engineering for Machine Learning" by Alice Zheng and Amanda Casari
+- Floridi, L. (2016). *The Fourth Revolution: How the Infosphere Is Reshaping Human Reality.* Oxford University Press.
+- Mollick, E. (2024). *Co-Intelligence: Living and Working with AI.* Portfolio.

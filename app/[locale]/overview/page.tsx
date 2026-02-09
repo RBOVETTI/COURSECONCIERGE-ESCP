@@ -56,8 +56,8 @@ export default function OverviewPage({ params }: PageProps) {
                   </div>
                   <h4 className="text-h4 font-semibold text-primary mb-2">Industry-Focused</h4>
                   <p className="text-text-secondary">
-                    Every concept is illustrated through F&B case studies from Coca-Cola, Nestlé, Starbucks,
-                    and other industry leaders.
+                    Every concept is grounded in Food & Beverage applications, ensuring immediate relevance
+                    to industry challenges and opportunities.
                   </p>
                 </div>
 
@@ -69,8 +69,8 @@ export default function OverviewPage({ params }: PageProps) {
                   </div>
                   <h4 className="text-h4 font-semibold text-primary mb-2">Hands-On Learning</h4>
                   <p className="text-text-secondary">
-                    Practical exercises, simulations, and real datasets ensure you can immediately apply concepts
-                    to your own challenges.
+                    Practical exercises, simulations, and interactive activities ensure you can immediately apply concepts
+                    to real-world challenges.
                   </p>
                 </div>
 
@@ -110,15 +110,16 @@ export default function OverviewPage({ params }: PageProps) {
             <h2 className="text-h2 font-bold text-primary mb-6">About Professor Riccardo Bovetti</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-text-primary leading-relaxed mb-4">
-                Professor Riccardo Bovetti is a leading expert in AI and data transformation, with a unique background
-                bridging technology, business strategy, and the Food & Beverage sector. His teaching philosophy centers
-                on practical application—students don&apos;t just learn about AI; they learn to deploy it.
+                Professor Riccardo Bovetti is a Partner at EY based in Milan. He has been in the consulting business since 1997,
+                starting in the ICT field before transitioning to managerial consulting. His professional focus lies primarily
+                in Consumer Products & Retail, with additional experience in Diversified Industrial Products.
               </p>
 
               <p className="text-text-primary leading-relaxed mb-4">
-                With extensive experience advising F&B companies on digital transformation, Professor Bovetti brings
-                real-world case studies and strategic frameworks into the classroom. His research focuses on the
-                intersection of algorithmic decision-making, organizational change, and industry-specific implementation challenges.
+                He holds a degree in Information Science and has been a university adjunct professor since 2003, teaching at
+                Universit&agrave; di Torino, CUOA Business School, SAA, Universit&agrave; Cattolica di Milano, ESCP Business School
+                (Turin & Berlin campuses), and ESA Beirut. His unique combination of deep industry consulting and academic
+                experience allows him to bridge the gap between theoretical frameworks and practical business transformation.
               </p>
 
               <h3 className="text-h3 font-semibold text-primary mt-8 mb-4">Teaching Philosophy</h3>
@@ -130,8 +131,9 @@ export default function OverviewPage({ params }: PageProps) {
               </blockquote>
 
               <p className="text-text-primary leading-relaxed">
-                This course reflects that philosophy: expect rigorous analysis, hands-on projects, and a relentless focus
-                on applicability. By the end, you won&apos;t just understand AI—you&apos;ll be prepared to drive change in your organization.
+                This course reflects that philosophy: expect rigorous analysis, hands-on simulations, interactive activities,
+                and a relentless focus on applicability. The course combines traditional lectures with a Harvard Business School
+                simulation and group exercises to ensure learning is both deep and practical.
               </p>
             </div>
           </div>
@@ -148,8 +150,8 @@ export default function OverviewPage({ params }: PageProps) {
               <div className="card p-6">
                 <h3 className="text-h3 font-semibold text-primary mb-3">Lectures</h3>
                 <p className="text-text-secondary mb-3">
-                  Seven comprehensive lectures covering foundations (enabling technologies, info-economy),
-                  strategy (analytics maturity, data governance), and implementation (machine learning, AI deployment).
+                  Five sessions combining lectures, a hands-on simulation, and interactive group activities covering
+                  enabling technologies, the info-economy, analytics strategy, machine learning, and the human dimension of data.
                 </p>
                 <Link href={`/${params.locale}/lectures`} className="text-accent hover:text-accent-dark font-medium inline-flex items-center">
                   View All Lectures
@@ -162,8 +164,8 @@ export default function OverviewPage({ params }: PageProps) {
               <div className="card p-6">
                 <h3 className="text-h3 font-semibold text-primary mb-3">Assessments</h3>
                 <p className="text-text-secondary mb-3">
-                  Continuous assessment through case analyses, practical projects, and strategic presentations.
-                  Final project: Design an AI transformation roadmap for a F&B company of your choice.
+                  Assessment is based on individual in-class participation, group activities (simulation and case study),
+                  and an individual written examination.
                 </p>
                 <Link href={`/${params.locale}/syllabus`} className="text-accent hover:text-accent-dark font-medium inline-flex items-center">
                   View Syllabus & Schedule
@@ -176,7 +178,7 @@ export default function OverviewPage({ params }: PageProps) {
               <div className="card p-6">
                 <h3 className="text-h3 font-semibold text-primary mb-3">Resources</h3>
                 <p className="text-text-secondary mb-3">
-                  Access lecture PDFs, recommended readings, analytical tools, datasets, and a comprehensive glossary
+                  Access lecture PDFs, recommended readings, AI-powered learning tools, and a comprehensive glossary
                   of AI and data analytics terminology.
                 </p>
                 <Link href={`/${params.locale}/resources`} className="text-accent hover:text-accent-dark font-medium inline-flex items-center">

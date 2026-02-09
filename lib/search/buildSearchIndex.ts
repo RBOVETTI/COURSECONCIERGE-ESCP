@@ -41,11 +41,11 @@ const searchData: SearchDocument[] = [
   {
     id: 'lecture-3-analytics-strategy',
     slug: 'lecture-3-analytics-strategy',
-    title: 'Analytics Strategy and Data-Driven Decision Making',
-    description: 'Building competitive advantage through data',
+    title: 'Analytics Strategy Simulation: Data-Driven Decision Making',
+    description: 'HBS Data Analytics Simulation by Thomas H. Davenport',
     lectureNumber: 3,
-    keywords: ['DELTA Framework', 'Data Governance', 'CDO', 'Analytics ROI'],
-    content: 'analytics strategy delta framework data governance chief data officer cdo roi return investment',
+    keywords: ['HBS Simulation', 'Strategic Decision Making', 'Analytics Strategy', 'Data-Driven'],
+    content: 'analytics strategy simulation harvard business school davenport strategic decision making data-driven organizational readiness',
   },
   {
     id: 'lecture-4-machine-learning',

@@ -40,7 +40,7 @@ export default function SyllabusPage({ params }: PageProps) {
                 </svg>
                 <h3 className="text-h4 font-semibold text-primary">Duration</h3>
               </div>
-              <p className="text-text-secondary">8 weeks including preliminary reading</p>
+              <p className="text-text-secondary">5 sessions plus examination</p>
             </div>
 
             <div className="card p-6">
@@ -80,7 +80,7 @@ export default function SyllabusPage({ params }: PageProps) {
                 'Analyze the strategic implications of AI and data technologies for F&B organizations',
                 'Design data-driven decision-making processes aligned with business objectives',
                 'Evaluate and select appropriate machine learning algorithms for specific business problems',
-                'Build analytics strategies using frameworks like DELTA and the Data Value Model',
+                'Apply analytics strategy frameworks through hands-on simulation exercises',
                 'Assess organizational readiness for AI transformation',
                 'Navigate ethical and governance challenges in AI deployment',
                 'Implement predictive and prescriptive analytics for operational optimization',
@@ -98,8 +98,29 @@ export default function SyllabusPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Schedule */}
+      {/* Recommended Readings */}
       <section className="section-padding bg-background-light">
+        <div className="container-width">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-h2 font-bold text-primary mb-6">Recommended Readings</h2>
+            <div className="space-y-4">
+              <div className="card p-6">
+                <h3 className="text-h4 font-semibold text-primary mb-1">The Fourth Revolution: How the Infosphere Is Reshaping Human Reality</h3>
+                <p className="text-sm text-text-light mb-2">Floridi, L. (2016) — Oxford University Press</p>
+                <p className="text-text-secondary">A foundational exploration of how the information revolution is transforming our understanding of ourselves, our relationships, and our world.</p>
+              </div>
+              <div className="card p-6">
+                <h3 className="text-h4 font-semibold text-primary mb-1">Co-Intelligence: Living and Working with AI</h3>
+                <p className="text-sm text-text-light mb-2">Mollick, E. (2024) — Portfolio</p>
+                <p className="text-text-secondary">A practical and insightful guide to understanding, leveraging, and coexisting with artificial intelligence in professional and personal contexts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Schedule */}
+      <section className="section-padding">
         <div className="container-width">
           <h2 className="text-h2 font-bold text-primary mb-8">Course Schedule</h2>
 
@@ -165,7 +186,7 @@ export default function SyllabusPage({ params }: PageProps) {
       </section>
 
       {/* Assessment */}
-      <section className="section-padding">
+      <section className="section-padding bg-background-light">
         <div className="container-width">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-h2 font-bold text-primary mb-6">Assessment Structure</h2>
@@ -173,56 +194,43 @@ export default function SyllabusPage({ params }: PageProps) {
             <div className="space-y-6">
               <div className="card p-6">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-h3 font-semibold text-primary">Class Participation</h3>
+                  <h3 className="text-h3 font-semibold text-primary">Individual Performance</h3>
                   <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
-                    15%
+                    10%
                   </span>
                 </div>
                 <p className="text-text-secondary">
-                  Active engagement in discussions, case analyses, and in-class exercises.
+                  Active engagement in in-class discussions, case analyses, and interactive exercises.
                   Quality of contributions matters more than quantity.
                 </p>
               </div>
 
               <div className="card p-6">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-h3 font-semibold text-primary">Weekly Assignments</h3>
+                  <h3 className="text-h3 font-semibold text-primary">Group Activities</h3>
                   <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
-                    25%
+                    10%
                   </span>
                 </div>
                 <p className="text-text-secondary">
-                  Short analytical exercises applying lecture concepts to F&B scenarios.
-                  Due before each session to ensure preparation and engagement.
+                  Team-based activities including the Harvard Business School simulation and case study discussion.
+                  Assessed on collaboration, analytical quality, and presentation of results.
                 </p>
               </div>
 
               <div className="card p-6">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-h3 font-semibold text-primary">Mid-Term Project</h3>
+                  <h3 className="text-h3 font-semibold text-primary">Individual Written Examination</h3>
                   <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
-                    25%
-                  </span>
-                </div>
-                <p className="text-text-secondary">
-                  Team-based analytics strategy proposal for a real F&B company.
-                  Must include problem definition, data requirements, methodology, and expected ROI.
-                </p>
-              </div>
-
-              <div className="card p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-h3 font-semibold text-primary">Final Project</h3>
-                  <span className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-semibold">
-                    35%
+                    80%
                   </span>
                 </div>
                 <p className="text-text-secondary mb-3">
-                  Comprehensive AI transformation roadmap for a F&B company (can be your employer or case study).
-                  Must address strategy, implementation, governance, and change management.
+                  Individual written exam covering all course materials, concepts, and their practical applications.
+                  Minimum qualifying mark: 8/20.
                 </p>
                 <p className="text-text-secondary text-sm">
-                  Deliverable: Written report (15 pages) + Presentation (20 minutes)
+                  Note: AI tools are not permitted during the examination.
                 </p>
               </div>
             </div>

@@ -142,6 +142,5 @@ Different business contexts require different optimization strategies:
 
 ## Further Reading
 
-- "The Second Machine Age" by Erik Brynjolfsson and Andrew McAfee
-- "Prediction Machines" by Ajay Agrawal, Joshua Gans, and Avi Goldfarb
-- "AI Superpowers" by Kai-Fu Lee
+- Floridi, L. (2016). *The Fourth Revolution: How the Infosphere Is Reshaping Human Reality.* Oxford University Press.
+- Mollick, E. (2024). *Co-Intelligence: Living and Working with AI.* Portfolio.
