@@ -114,7 +114,7 @@ export default function OverviewPage({ params }: PageProps) {
                     src="/images/photo.jpg"
                     alt="Professor Riccardo Bovetti"
                     fill
-                    className="object-cover grayscale"
+                    className="object-cover object-top grayscale"
                   />
                 </div>
               </div>
