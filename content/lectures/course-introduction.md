@@ -1,8 +1,6 @@
 ---
 title: "Welcome to AI & Data Transformation"
 lectureNumber: 0
-date: "2026-01-15"
-duration: 15
 image: "/images/lectures/intro.png"
 description: "An introduction to the course structure, learning approach, and the transformative journey ahead in AI and data analytics for the Food & Beverage industry."
 keywords:
