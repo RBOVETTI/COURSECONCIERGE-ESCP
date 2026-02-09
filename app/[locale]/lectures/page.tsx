@@ -78,24 +78,30 @@ export default function LecturesHubPage({ params }: PageProps) {
                     )}
 
                     {/* Metadata */}
-                    <div className="flex items-center gap-4 text-sm text-text-light mb-4">
-                      <div className="flex items-center">
-                        <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {lecture.frontmatter.duration} {t.lectures.minutes}
+                    {(lecture.frontmatter.duration || lecture.frontmatter.date) && (
+                      <div className="flex items-center gap-4 text-sm text-text-light mb-4">
+                        {lecture.frontmatter.duration && (
+                          <div className="flex items-center">
+                            <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            {lecture.frontmatter.duration} {t.lectures.minutes}
+                          </div>
+                        )}
+                        {lecture.frontmatter.date && (
+                          <div className="flex items-center">
+                            <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            {new Date(lecture.frontmatter.date).toLocaleDateString(params.locale, {
+                              month: 'short',
+                              day: 'numeric',
+                              year: 'numeric',
+                            })}
+                          </div>
+                        )}
                       </div>
-                      <div className="flex items-center">
-                        <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        {new Date(lecture.frontmatter.date).toLocaleDateString(params.locale, {
-                          month: 'short',
-                          day: 'numeric',
-                          year: 'numeric',
-                        })}
-                      </div>
-                    </div>
+                    )}
 
                     {/* Keywords Tags */}
                     {lecture.frontmatter.keywords && lecture.frontmatter.keywords.length > 0 && (

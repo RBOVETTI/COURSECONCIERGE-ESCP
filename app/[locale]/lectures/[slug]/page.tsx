@@ -84,9 +84,11 @@ export default function LecturePage({ params }: PageProps) {
             <span className="bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
               {t.lectures.title} {frontmatter.lectureNumber}
             </span>
-            <span className="text-white/80 text-sm">
-              {frontmatter.duration} {t.lectures.minutes}
-            </span>
+            {frontmatter.duration && (
+              <span className="text-white/80 text-sm">
+                {frontmatter.duration} {t.lectures.minutes}
+              </span>
+            )}
           </div>
           <h1 className="text-display font-bold text-white mb-4 max-w-4xl">
             {frontmatter.title}
