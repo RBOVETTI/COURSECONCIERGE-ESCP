@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Locale } from '@/i18n';
 import { getTranslations } from '@/lib/utils/i18n';
+import LMSModal from '@/components/lectures/LMSModal';
 
 interface PageProps {
   params: {
@@ -13,6 +14,7 @@ interface PageProps {
 export default function ResourcesPage({ params }: PageProps) {
   const t = getTranslations(params.locale);
   const [activeTab, setActiveTab] = useState<'pdfs' | 'readings' | 'additional' | 'glossary'>('pdfs');
+  const [lmsModalOpen, setLmsModalOpen] = useState(false);
 
   const pdfs = [
     { title: 'Course Introduction', file: '/pdfs/course-intro.pdf', description: 'Enterprise AI & ML Companion' },
@@ -198,25 +200,26 @@ export default function ResourcesPage({ params }: PageProps) {
 
           {/* PDF Tab */}
           {activeTab === 'pdfs' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pdfs.map((pdf) => (
-                <a
-                  key={pdf.file}
-                  href={pdf.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card p-6 hover:border-accent transition-all"
-                >
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-h4 font-semibold text-primary mb-2">{pdf.title}</h3>
-                  <p className="text-text-secondary text-sm">{pdf.description}</p>
-                </a>
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {pdfs.map((pdf) => (
+                  <button
+                    key={pdf.file}
+                    onClick={() => setLmsModalOpen(true)}
+                    className="card p-6 hover:border-accent transition-all text-left cursor-pointer"
+                  >
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                      <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-h4 font-semibold text-primary mb-2">{pdf.title}</h3>
+                    <p className="text-text-secondary text-sm">{pdf.description}</p>
+                  </button>
+                ))}
+              </div>
+              <LMSModal isOpen={lmsModalOpen} onClose={() => setLmsModalOpen(false)} />
+            </>
           )}
 
           {/* Core Readings Tab */}
