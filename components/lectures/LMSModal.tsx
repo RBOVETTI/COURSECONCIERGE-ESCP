@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface LMSModalProps {
   isOpen: boolean;
@@ -8,21 +8,53 @@ interface LMSModalProps {
 }
 
 export default function LMSModal({ isOpen, onClose }: LMSModalProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
+    const previousActiveElement = document.activeElement as HTMLElement | null;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
+        return;
+      }
+
+      if (e.key !== 'Tab' || !dialogRef.current) {
+        return;
+      }
+
+      const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+      );
+
+      if (focusable.length === 0) {
+        e.preventDefault();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'hidden';
+      closeButtonRef.current?.focus();
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
+      previousActiveElement?.focus();
     };
   }, [isOpen, onClose]);
 
@@ -34,10 +66,16 @@ export default function LMSModal({ isOpen, onClose }: LMSModalProps) {
       onClick={onClose}
     >
       <div
+        ref={dialogRef}
         className="relative bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl border border-border"
         onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="lms-modal-title"
       >
         <button
+          ref={closeButtonRef}
+          type="button"
           onClick={onClose}
           className="absolute top-4 right-4 text-text-secondary hover:text-text-primary transition-colors"
           aria-label="Close modal"
@@ -53,7 +91,7 @@ export default function LMSModal({ isOpen, onClose }: LMSModalProps) {
           </svg>
         </div>
 
-        <h3 className="text-h3 font-serif font-semibold text-primary text-center mb-3">
+        <h3 id="lms-modal-title" className="text-h3 font-serif font-semibold text-primary text-center mb-3">
           Download Lecture Materials
         </h3>
 
@@ -66,6 +104,7 @@ export default function LMSModal({ isOpen, onClose }: LMSModalProps) {
         </p>
 
         <button
+          type="button"
           onClick={onClose}
           className="w-full bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium transition-colors"
         >

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Locale } from '@/i18n';
+import { Locale, locales } from '@/i18n';
 import { getTranslations } from '@/lib/utils/i18n';
 import { getLectureBySlug, getLectureSlugs, getAdjacentLectures } from '@/lib/utils/lectures';
 import { extractTableOfContents } from '@/lib/utils/toc';
@@ -24,7 +24,6 @@ interface PageProps {
 
 export async function generateStaticParams() {
   const slugs = getLectureSlugs();
-  const locales: Locale[] = ['en'];
 
   return locales.flatMap((locale) =>
     slugs.map((slug) => ({

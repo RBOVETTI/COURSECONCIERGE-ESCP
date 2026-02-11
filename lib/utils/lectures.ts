@@ -6,13 +6,13 @@ export interface LectureFrontmatter {
   title: string;
   slug: string;
   lectureNumber: number;
-  date: string;
-  duration: number;
-  image: string;
-  pdfFile: string;
-  description: string;
-  keywords: string[];
-  objectives: string[];
+  date?: string;
+  duration?: number;
+  image?: string;
+  pdfFile?: string;
+  description?: string;
+  keywords?: string[];
+  objectives?: string[];
 }
 
 export interface Lecture {

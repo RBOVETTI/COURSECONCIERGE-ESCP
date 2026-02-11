@@ -1,5 +1,6 @@
 import { Inter, JetBrains_Mono, Cormorant_Garamond } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { defaultLocale } from "@/i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,11 +35,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://aibd-course.vercel.app',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -47,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning>
+    <html lang={defaultLocale} suppressHydrationWarning>
       <body
         className={`${inter.variable} ${cormorantGaramond.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >

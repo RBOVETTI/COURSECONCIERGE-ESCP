@@ -32,7 +32,6 @@ export default function Header({ locale, t }: HeaderProps) {
     return pathname.startsWith(href);
   };
 
-
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <nav className="container-width" aria-label="Main navigation">

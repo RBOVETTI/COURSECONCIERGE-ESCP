@@ -1,9 +1,22 @@
 import Link from 'next/link';
 import { Locale } from '@/i18n';
 import { getTranslations } from '@/lib/utils/i18n';
+import { getAllLectures } from '@/lib/utils/lectures';
+import { selectCurrentLectureSlug } from '@/lib/utils/courseProgress';
 
 export default function HomePage({ params }: { params: { locale: Locale } }) {
   const t = getTranslations(params.locale);
+  const lectures = getAllLectures();
+  const currentWeekSlug = selectCurrentLectureSlug(
+    lectures.map((lecture) => ({
+      slug: lecture.frontmatter.slug,
+      lectureNumber: lecture.frontmatter.lectureNumber,
+      date: lecture.frontmatter.date,
+    }))
+  );
+  const currentWeekHref = currentWeekSlug
+    ? `/${params.locale}/lectures/${currentWeekSlug}`
+    : `/${params.locale}/lectures`;
 
   return (
     <div className="min-h-screen">
@@ -47,7 +60,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Current Week Card */}
             <Link
-              href={`/${params.locale}/lectures/course-introduction`}
+              href={currentWeekHref}
               className="card p-6 hover:scale-105 transition-transform"
             >
               <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">

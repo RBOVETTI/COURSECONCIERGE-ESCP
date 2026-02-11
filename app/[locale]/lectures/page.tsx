@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Locale } from '@/i18n';
 import { getTranslations } from '@/lib/utils/i18n';
 import { getAllLectures } from '@/lib/utils/lectures';
+import { parseLectureDate } from '@/lib/utils/lectureMeta';
 
 interface PageProps {
   params: {
@@ -18,6 +19,18 @@ export const metadata = {
 export default function LecturesHubPage({ params }: PageProps) {
   const t = getTranslations(params.locale);
   const lectures = getAllLectures();
+  const formatLectureDate = (value?: string) => {
+    const parsed = parseLectureDate(value);
+    if (!parsed) {
+      return null;
+    }
+
+    return parsed.toLocaleDateString(params.locale, {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    });
+  };
 
   return (
     <div className="min-h-screen">
@@ -88,16 +101,12 @@ export default function LecturesHubPage({ params }: PageProps) {
                             {lecture.frontmatter.duration} {t.lectures.minutes}
                           </div>
                         )}
-                        {lecture.frontmatter.date && (
+                        {formatLectureDate(lecture.frontmatter.date) && (
                           <div className="flex items-center">
                             <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            {new Date(lecture.frontmatter.date).toLocaleDateString(params.locale, {
-                              month: 'short',
-                              day: 'numeric',
-                              year: 'numeric',
-                            })}
+                            {formatLectureDate(lecture.frontmatter.date)}
                           </div>
                         )}
                       </div>

@@ -29,9 +29,9 @@ export default function Footer({ locale, t }: FooterProps) {
               </div>
               <span className="font-semibold text-lg">AI & Data</span>
             </div>
-            <p className="text-text-white/80 text-sm mb-2">{t.footer.course}</p>
-            <p className="text-text-white/80 text-sm mb-2">{t.footer.institution}</p>
-            <p className="text-text-white/80 text-sm">{t.footer.professor}</p>
+            <p className="text-white/80 text-sm mb-2">{t.footer.course}</p>
+            <p className="text-white/80 text-sm mb-2">{t.footer.institution}</p>
+            <p className="text-white/80 text-sm">{t.footer.professor}</p>
           </div>
 
           {/* Quick Links */}
@@ -42,7 +42,7 @@ export default function Footer({ locale, t }: FooterProps) {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-text-white/80 hover:text-accent transition-colors text-sm"
+                    className="text-white/80 hover:text-accent transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -54,9 +54,9 @@ export default function Footer({ locale, t }: FooterProps) {
           {/* Contact Information */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
-            <p className="text-text-white/80 text-sm mb-2">ESCP Business School</p>
-            <p className="text-text-white/80 text-sm mb-2">Turin Campus</p>
-            <p className="text-text-white/80 text-sm">
+            <p className="text-white/80 text-sm mb-2">ESCP Business School</p>
+            <p className="text-white/80 text-sm mb-2">Turin Campus</p>
+            <p className="text-white/80 text-sm">
               <a href="mailto:riccardo.bovetti@gmail.com" className="hover:text-accent transition-colors">
                 riccardo.bovetti@gmail.com
               </a>
@@ -66,7 +66,7 @@ export default function Footer({ locale, t }: FooterProps) {
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-white/20 text-center">
-          <p className="text-text-white/60 text-sm">
+          <p className="text-white/60 text-sm">
             {t.footer.copyright.replace('2026', currentYear.toString())}
           </p>
         </div>

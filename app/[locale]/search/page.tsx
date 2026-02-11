@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useEffect, useState, Suspense } from 'react';
 import { Locale } from '@/i18n';
 import { getTranslations } from '@/lib/utils/i18n';
-import { searchLectures } from '@/lib/search/buildSearchIndex';
 
 interface SearchResult {
   id: string;
@@ -33,15 +32,36 @@ function SearchContent({ params }: PageProps) {
   useEffect(() => {
     if (query) {
       setLoading(true);
+      const controller = new AbortController();
+
       try {
-        const searchResults = searchLectures(query, 20) as SearchResult[];
-        setResults(searchResults);
+        fetch(`/api/search?q=${encodeURIComponent(query)}&limit=20`, {
+          signal: controller.signal,
+        })
+          .then(async (response) => {
+            if (!response.ok) {
+              throw new Error(`Search request failed with status ${response.status}`);
+            }
+
+            const payload = await response.json();
+            setResults((payload.results ?? []) as SearchResult[]);
+          })
+          .catch((error) => {
+            if ((error as Error).name !== 'AbortError') {
+              console.error('Search error:', error);
+              setResults([]);
+            }
+          })
+          .finally(() => {
+            setLoading(false);
+          });
       } catch (error) {
         console.error('Search error:', error);
         setResults([]);
-      } finally {
         setLoading(false);
       }
+
+      return () => controller.abort();
     } else {
       setResults([]);
       setLoading(false);
@@ -152,10 +172,9 @@ function SearchContent({ params }: PageProps) {
                         </h2>
 
                         {result.snippet && (
-                          <div
-                            className="text-text-secondary text-sm mb-3 line-clamp-3"
-                            dangerouslySetInnerHTML={{ __html: result.snippet }}
-                          />
+                          <p className="text-text-secondary text-sm mb-3 line-clamp-3">
+                            {result.snippet}
+                          </p>
                         )}
 
                         {!result.snippet && result.description && (

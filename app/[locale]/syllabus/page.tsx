@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Locale } from '@/i18n';
 import { getAllLectures } from '@/lib/utils/lectures';
+import { parseLectureDate } from '@/lib/utils/lectureMeta';
 
 interface PageProps {
   params: {
@@ -15,6 +16,18 @@ export const metadata = {
 
 export default function SyllabusPage({ params }: PageProps) {
   const lectures = getAllLectures();
+  const formatLectureDate = (value?: string) => {
+    const parsed = parseLectureDate(value);
+    if (!parsed) {
+      return null;
+    }
+
+    return parsed.toLocaleDateString(params.locale, {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
 
   return (
     <div className="min-h-screen">
@@ -148,22 +161,22 @@ export default function SyllabusPage({ params }: PageProps) {
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4 text-sm text-text-light">
-                      <div className="flex items-center">
-                        <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        {new Date(lecture.frontmatter.date).toLocaleDateString(params.locale, {
-                          weekday: 'long',
-                          month: 'long',
-                          day: 'numeric',
-                        })}
-                      </div>
-                      <div className="flex items-center">
-                        <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        {lecture.frontmatter.duration} minutes
-                      </div>
+                      {formatLectureDate(lecture.frontmatter.date) && (
+                        <div className="flex items-center">
+                          <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          {formatLectureDate(lecture.frontmatter.date)}
+                        </div>
+                      )}
+                      {lecture.frontmatter.duration && (
+                        <div className="flex items-center">
+                          <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {lecture.frontmatter.duration} minutes
+                        </div>
+                      )}
                     </div>
 
                     {lecture.frontmatter.description && (
