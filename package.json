@@ -15,7 +15,7 @@
     "lunr": "^2.3.9",
     "next": "14.2.35",
     "next-intl": "^4.8.2",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "react": "^18",
     "react-dom": "^18",
     "rehype-autolink-headings": "^7.1.0",
