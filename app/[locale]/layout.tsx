@@ -11,26 +11,29 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: string }>;
 }) {
-  if (!locales.includes(params.locale)) {
+  const { locale: localeParam } = await params;
+  const locale = localeParam as Locale;
+
+  if (!locales.includes(locale)) {
     notFound();
   }
 
-  const t = getTranslations(params.locale);
+  const t = getTranslations(locale);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <HtmlLangUpdater locale={params.locale} />
-      <Header locale={params.locale} t={t} />
-      <Breadcrumbs locale={params.locale} t={t} />
+      <HtmlLangUpdater locale={locale} />
+      <Header locale={locale} t={t} />
+      <Breadcrumbs locale={locale} t={t} />
       <main className="flex-grow">{children}</main>
-      <Footer locale={params.locale} t={t} />
+      <Footer locale={locale} t={t} />
     </div>
   );
 }
