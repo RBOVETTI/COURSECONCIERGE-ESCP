@@ -6,9 +6,7 @@ import { getAllLectures } from '@/lib/utils/lectures';
 import { parseLectureDate } from '@/lib/utils/lectureMeta';
 
 interface PageProps {
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export const metadata = {
@@ -16,8 +14,9 @@ export const metadata = {
   description: 'Explore all lectures in the AI & Data Transformation in Food & Beverage course.',
 };
 
-export default function LecturesHubPage({ params }: PageProps) {
-  const t = getTranslations(params.locale);
+export default async function LecturesHubPage({ params }: PageProps) {
+  const { locale } = await params;
+  const t = getTranslations(locale as Locale);
   const lectures = getAllLectures();
   const formatLectureDate = (value?: string) => {
     const parsed = parseLectureDate(value);
@@ -25,7 +24,7 @@ export default function LecturesHubPage({ params }: PageProps) {
       return null;
     }
 
-    return parsed.toLocaleDateString(params.locale, {
+    return parsed.toLocaleDateString(locale, {
       month: 'short',
       day: 'numeric',
       year: 'numeric',
@@ -58,7 +57,7 @@ export default function LecturesHubPage({ params }: PageProps) {
 
                 {/* Lecture Card */}
                 <Link
-                  href={`/${params.locale}/lectures/${lecture.frontmatter.slug}`}
+                  href={`/${locale}/lectures/${lecture.frontmatter.slug}`}
                   className="block card overflow-hidden hover:scale-[1.02] transition-transform"
                 >
                   {/* Image */}

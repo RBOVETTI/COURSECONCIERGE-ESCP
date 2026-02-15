@@ -1,12 +1,9 @@
 import Link from 'next/link';
-import { Locale } from '@/i18n';
 import { getAllLectures } from '@/lib/utils/lectures';
 import { parseLectureDate } from '@/lib/utils/lectureMeta';
 
 interface PageProps {
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export const metadata = {
@@ -14,7 +11,8 @@ export const metadata = {
   description: 'Course schedule, assessment structure, and learning outcomes for AI & Data Transformation in F&B.',
 };
 
-export default function SyllabusPage({ params }: PageProps) {
+export default async function SyllabusPage({ params }: PageProps) {
+  const { locale } = await params;
   const lectures = getAllLectures();
   const formatLectureDate = (value?: string) => {
     const parsed = parseLectureDate(value);
@@ -22,7 +20,7 @@ export default function SyllabusPage({ params }: PageProps) {
       return null;
     }
 
-    return parsed.toLocaleDateString(params.locale, {
+    return parsed.toLocaleDateString(locale, {
       weekday: 'long',
       month: 'long',
       day: 'numeric',
@@ -141,7 +139,7 @@ export default function SyllabusPage({ params }: PageProps) {
             {lectures.map((lecture) => (
               <Link
                 key={lecture.frontmatter.slug}
-                href={`/${params.locale}/lectures/${lecture.frontmatter.slug}`}
+                href={`/${locale}/lectures/${lecture.frontmatter.slug}`}
                 className="card p-6 hover:border-accent transition-all block"
               >
                 <div className="flex flex-col md:flex-row md:items-center gap-4">

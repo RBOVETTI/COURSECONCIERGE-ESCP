@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { useEffect, useState, Suspense } from 'react';
+import { use, useEffect, useState, Suspense } from 'react';
 import { Locale } from '@/i18n';
 import { getTranslations } from '@/lib/utils/i18n';
 
@@ -17,15 +17,17 @@ interface SearchResult {
 }
 
 interface PageProps {
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ locale: string }>;
 }
 
-function SearchContent({ params }: PageProps) {
+interface SearchContentProps {
+  locale: string;
+}
+
+function SearchContent({ locale }: SearchContentProps) {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
-  const t = getTranslations(params.locale);
+  const t = getTranslations(locale as Locale);
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -141,7 +143,7 @@ function SearchContent({ params }: PageProps) {
                   {t.search.noResultsDesc}
                 </p>
                 <Link
-                  href={`/${params.locale}/lectures`}
+                  href={`/${locale}/lectures`}
                   className="btn-primary inline-block"
                 >
                   Browse All Lectures
@@ -154,7 +156,7 @@ function SearchContent({ params }: PageProps) {
                 {results.map((result) => (
                   <Link
                     key={result.id}
-                    href={`/${params.locale}/lectures/${result.slug}`}
+                    href={`/${locale}/lectures/${result.slug}`}
                     className="block card p-6 hover:border-accent transition-all"
                   >
                     <div className="flex items-start gap-4">
@@ -213,6 +215,7 @@ function SearchContent({ params }: PageProps) {
 }
 
 export default function SearchPage({ params }: PageProps) {
+  const { locale } = use(params);
   return (
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center">
@@ -222,7 +225,7 @@ export default function SearchPage({ params }: PageProps) {
         </div>
       </div>
     }>
-      <SearchContent params={params} />
+      <SearchContent locale={locale} />
     </Suspense>
   );
 }

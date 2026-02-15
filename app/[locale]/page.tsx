@@ -4,8 +4,9 @@ import { getTranslations } from '@/lib/utils/i18n';
 import { getAllLectures } from '@/lib/utils/lectures';
 import { selectCurrentLectureSlug } from '@/lib/utils/courseProgress';
 
-export default function HomePage({ params }: { params: { locale: Locale } }) {
-  const t = getTranslations(params.locale);
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = getTranslations(locale as Locale);
   const lectures = getAllLectures();
   const currentWeekSlug = selectCurrentLectureSlug(
     lectures.map((lecture) => ({
@@ -15,8 +16,8 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
     }))
   );
   const currentWeekHref = currentWeekSlug
-    ? `/${params.locale}/lectures/${currentWeekSlug}`
-    : `/${params.locale}/lectures`;
+    ? `/${locale}/lectures/${currentWeekSlug}`
+    : `/${locale}/lectures`;
 
   return (
     <div className="min-h-screen">
@@ -35,13 +36,13 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href={`/${params.locale}/lectures`}
+                href={`/${locale}/lectures`}
                 className="inline-block bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors text-center"
               >
                 {t.home.hero.ctaPrimary}
               </Link>
               <Link
-                href={`/${params.locale}/overview`}
+                href={`/${locale}/overview`}
                 className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors backdrop-blur-sm text-center"
               >
                 {t.home.hero.ctaSecondary}
@@ -78,7 +79,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
 
             {/* All Lectures Card */}
             <Link
-              href={`/${params.locale}/lectures`}
+              href={`/${locale}/lectures`}
               className="card p-6 hover:scale-105 transition-transform"
             >
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -96,7 +97,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
 
             {/* AI Assistant Card */}
             <Link
-              href={`/${params.locale}/ai-assistant`}
+              href={`/${locale}/ai-assistant`}
               className="card p-6 hover:scale-105 transition-transform"
             >
               <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">

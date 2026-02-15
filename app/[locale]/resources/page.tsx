@@ -1,18 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { Locale } from '@/i18n';
 import { getTranslations } from '@/lib/utils/i18n';
 import LMSModal from '@/components/lectures/LMSModal';
 
 interface PageProps {
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export default function ResourcesPage({ params }: PageProps) {
-  const t = getTranslations(params.locale);
+  const { locale } = use(params);
+  const t = getTranslations(locale as Locale);
   const [activeTab, setActiveTab] = useState<'pdfs' | 'readings' | 'additional' | 'glossary'>('pdfs');
   const [lmsModalOpen, setLmsModalOpen] = useState(false);
 

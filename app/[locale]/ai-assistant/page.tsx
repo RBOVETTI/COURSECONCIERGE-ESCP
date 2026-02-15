@@ -2,13 +2,12 @@ import { Locale } from '@/i18n';
 import { getTranslations } from '@/lib/utils/i18n';
 
 interface PageProps {
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ locale: string }>;
 }
 
-export default function AIAssistantPage({ params }: PageProps) {
-  const t = getTranslations(params.locale);
+export default async function AIAssistantPage({ params }: PageProps) {
+  const { locale } = await params;
+  const t = getTranslations(locale as Locale);
 
   const assistants = [
     {

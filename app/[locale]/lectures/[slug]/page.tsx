@@ -16,10 +16,7 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
 interface PageProps {
-  params: {
-    locale: Locale;
-    slug: string;
-  };
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -34,7 +31,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const lecture = getLectureBySlug(params.slug);
+  const { slug } = await params;
+  const lecture = getLectureBySlug(slug);
 
   if (!lecture) {
     return {
@@ -49,9 +47,10 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default function LecturePage({ params }: PageProps) {
-  const t = getTranslations(params.locale);
-  const lecture = getLectureBySlug(params.slug);
+export default async function LecturePage({ params }: PageProps) {
+  const { locale, slug } = await params;
+  const t = getTranslations(locale as Locale);
+  const lecture = getLectureBySlug(slug);
 
   if (!lecture) {
     notFound();
@@ -59,7 +58,7 @@ export default function LecturePage({ params }: PageProps) {
 
   const { frontmatter, content } = lecture;
   const toc = extractTableOfContents(content);
-  const { previous, next } = getAdjacentLectures(params.slug);
+  const { previous, next } = getAdjacentLectures(slug);
 
   return (
     <div className="min-h-screen">
@@ -102,7 +101,7 @@ export default function LecturePage({ params }: PageProps) {
               <PDFDownloadButton label={t.lectures.downloadPdf} />
             )}
             <Link
-              href={`/${params.locale}/ai-assistant`}
+              href={`/${locale}/ai-assistant`}
               className="inline-flex items-center bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -169,7 +168,7 @@ export default function LecturePage({ params }: PageProps) {
 
               {/* Navigation */}
               <LectureNavigation
-                locale={params.locale}
+                locale={locale as Locale}
                 t={t}
                 previous={previous}
                 next={next}

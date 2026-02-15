@@ -1,11 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Locale } from '@/i18n';
 
 interface PageProps {
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export const metadata = {
@@ -13,7 +10,8 @@ export const metadata = {
   description: 'Learn about the AI & Data Transformation in Food & Beverage course structure, pedagogy, and professor.',
 };
 
-export default function OverviewPage({ params }: PageProps) {
+export default async function OverviewPage({ params }: PageProps) {
+  const { locale } = await params;
 
   return (
     <div className="min-h-screen">
@@ -165,7 +163,7 @@ export default function OverviewPage({ params }: PageProps) {
                   Five sessions combining lectures, a hands-on simulation, and interactive group activities covering
                   enabling technologies, the info-economy, analytics strategy, machine learning, and the human dimension of data.
                 </p>
-                <Link href={`/${params.locale}/lectures`} className="text-accent hover:text-accent-dark font-medium inline-flex items-center">
+                <Link href={`/${locale}/lectures`} className="text-accent hover:text-accent-dark font-medium inline-flex items-center">
                   View All Lectures
                   <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -179,7 +177,7 @@ export default function OverviewPage({ params }: PageProps) {
                   Assessment is based on individual in-class participation, group activities (simulation and case study),
                   and an individual written examination.
                 </p>
-                <Link href={`/${params.locale}/syllabus`} className="text-accent hover:text-accent-dark font-medium inline-flex items-center">
+                <Link href={`/${locale}/syllabus`} className="text-accent hover:text-accent-dark font-medium inline-flex items-center">
                   View Syllabus & Schedule
                   <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -193,7 +191,7 @@ export default function OverviewPage({ params }: PageProps) {
                   Access lecture PDFs, recommended readings, AI-powered learning tools, and a comprehensive glossary
                   of AI and data analytics terminology.
                 </p>
-                <Link href={`/${params.locale}/resources`} className="text-accent hover:text-accent-dark font-medium inline-flex items-center">
+                <Link href={`/${locale}/resources`} className="text-accent hover:text-accent-dark font-medium inline-flex items-center">
                   Browse Resources
                   <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -214,13 +212,13 @@ export default function OverviewPage({ params }: PageProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={`/${params.locale}/lectures/course-introduction`}
+              href={`/${locale}/lectures/course-introduction`}
               className="inline-block bg-white text-primary hover:bg-background-light px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
             >
               Start with Introduction
             </Link>
             <Link
-              href={`/${params.locale}/lectures`}
+              href={`/${locale}/lectures`}
               className="inline-block bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors backdrop-blur-sm"
             >
               Browse All Lectures
