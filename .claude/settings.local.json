@@ -8,7 +8,12 @@
       "Bash(npm run build:*)",
       "Bash(grep:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebFetch(domain:aiframework.rbovetti.com)",
+      "Bash(git push:*)",
+      "WebSearch",
+      "WebFetch(domain:mitsloan.mit.edu)",
+      "WebFetch(domain:www.goodreads.com)"
     ]
   }
 }
