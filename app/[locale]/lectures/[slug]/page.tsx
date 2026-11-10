@@ -31,7 +31,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const lecture = getLectureBySlug(slug);
 
   if (!lecture) {
@@ -44,6 +44,7 @@ export async function generateMetadata({ params }: PageProps) {
     title: `${lecture.frontmatter.title} | AI & Data Transformation`,
     description: lecture.frontmatter.description,
     keywords: lecture.frontmatter.keywords?.join(', '),
+    alternates: { canonical: `/${locale}/lectures/${slug}` },
   };
 }
 

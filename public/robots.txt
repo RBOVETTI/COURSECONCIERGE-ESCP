@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://aibd-course.vercel.app/sitemap.xml
+Sitemap: https://courseconcierge.rbovetti.com/sitemap.xml

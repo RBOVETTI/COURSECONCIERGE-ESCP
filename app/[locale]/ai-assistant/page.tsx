@@ -5,6 +5,11 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
+export async function generateMetadata({ params }: PageProps) {
+  const { locale } = await params;
+  return { alternates: { canonical: `/${locale}/ai-assistant` } };
+}
+
 export default async function AIAssistantPage({ params }: PageProps) {
   const { locale } = await params;
   const t = getTranslations(locale as Locale);

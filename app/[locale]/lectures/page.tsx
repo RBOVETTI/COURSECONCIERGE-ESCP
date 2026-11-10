@@ -9,10 +9,14 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata = {
-  title: 'All Lectures | AI & Data Transformation',
-  description: 'Explore all lectures in the AI & Data Transformation in Food & Beverage course.',
-};
+export async function generateMetadata({ params }: PageProps) {
+  const { locale } = await params;
+  return {
+    title: 'All Lectures | AI & Data Transformation',
+    description: 'Explore all lectures in the AI & Data Transformation in Food & Beverage course.',
+    alternates: { canonical: `/${locale}/lectures` },
+  };
+}
 
 export default async function LecturesHubPage({ params }: PageProps) {
   const { locale } = await params;

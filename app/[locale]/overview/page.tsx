@@ -5,10 +5,14 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata = {
-  title: 'Course Overview | AI & Data Transformation',
-  description: 'Learn about the AI & Data Transformation in Food & Beverage course structure, pedagogy, and professor.',
-};
+export async function generateMetadata({ params }: PageProps) {
+  const { locale } = await params;
+  return {
+    title: 'Course Overview | AI & Data Transformation',
+    description: 'Learn about the AI & Data Transformation in Food & Beverage course structure, pedagogy, and professor.',
+    alternates: { canonical: `/${locale}/overview` },
+  };
+}
 
 export default async function OverviewPage({ params }: PageProps) {
   const { locale } = await params;

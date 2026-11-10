@@ -6,10 +6,14 @@ interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-export const metadata = {
-  title: 'Syllabus & Schedule | AI & Data Transformation',
-  description: 'Course schedule, assessment structure, and learning outcomes for AI & Data Transformation in F&B.',
-};
+export async function generateMetadata({ params }: PageProps) {
+  const { locale } = await params;
+  return {
+    title: 'Syllabus & Schedule | AI & Data Transformation',
+    description: 'Course schedule, assessment structure, and learning outcomes for AI & Data Transformation in F&B.',
+    alternates: { canonical: `/${locale}/syllabus` },
+  };
+}
 
 export default async function SyllabusPage({ params }: PageProps) {
   const { locale } = await params;

@@ -1,6 +1,7 @@
 import { Inter, JetBrains_Mono, Cormorant_Garamond } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { defaultLocale } from "@/i18n";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "AI & Data Transformation in Food & Beverage | Prof. Riccardo Bovetti",
   description: "ESCP Business School course on AI and data analytics in the F&B sector",
-  metadataBase: new URL('https://aibd-course.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   manifest: '/manifest.json',
   keywords: ['AI', 'Machine Learning', 'Data Analytics', 'Food & Beverage', 'ESCP', 'Business School'],
   authors: [{ name: 'Prof. Riccardo Bovetti' }],
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     description: 'ESCP Business School course on AI and data analytics in the F&B sector',
     type: 'website',
     locale: 'en_US',
-    url: 'https://aibd-course.vercel.app',
+    url: `${SITE_URL}/${defaultLocale}`,
   },
 };
 

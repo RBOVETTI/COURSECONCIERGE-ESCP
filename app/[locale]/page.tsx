@@ -4,6 +4,11 @@ import { getTranslations } from '@/lib/utils/i18n';
 import { getAllLectures } from '@/lib/utils/lectures';
 import { selectCurrentLectureSlug } from '@/lib/utils/courseProgress';
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return { alternates: { canonical: `/${locale}` } };
+}
+
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = getTranslations(locale as Locale);
